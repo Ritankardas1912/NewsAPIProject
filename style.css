@@ -1,0 +1,143 @@
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.obj-width{
+    max-width: 1200px;
+    margin: auto;
+ 
+}
+
+.obj-width-nav{
+    max-width: 1400px;
+    margin: auto;
+}
+
+nav{
+
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem 0;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 2.2rem;
+}
+.navbar a:hover{
+    letter-spacing: 4px;
+    font-size: 2rem;
+}
+
+.categories{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.categories span{
+    margin-right: 10px;
+    align-items: center;
+}
+
+#search-input{
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #000000;
+}
+
+#search-button{
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#blog-container{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.blog-card{
+    width: 280px;
+    border: 0.2px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 1rem;
+    margin: 10px;
+}
+
+.blog-card:hover{
+    box-shadow:  4px 4px 10px rgba(255, 255, 255, 0.572);
+}
+
+.blog-card img{
+    width: 100%;
+    height:280px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.blog-card h2{
+    
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.blog-card p{
+    
+    font-size: 1.1rem;
+    padding-top: 1rem;
+}
+hr{
+    margin: 10px;
+    align: center;
+}
+ 
+footer{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.footer-categories ul{
+    padding-bottom: 20px;
+}
+.services ul{
+    padding-bottom: 20px;
+}
+
+footer .logo .h1{
+    font-size: 3rem;
+}
+@media(max-width: 500px){
+
+}
