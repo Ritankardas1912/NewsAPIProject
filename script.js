@@ -1,4 +1,6 @@
-const apiKey='f88e0abbc60e4e9d968eb8358e31601f'
+const apiKey='205ff44711ea4724a817414981487ffe'
+//const apikey1 = '205ff44711ea4724a817414981487ffe'
+//const apiKey2 = '205ff44711ea4724a817414981487ffe'
 
 const blogContainer = document.getElementById("blog-container");
 const searchField  = document.getElementById('search-input')
@@ -12,7 +14,7 @@ const currentButton = document.getElementById('current-button')
 
 async function fetchRandomNews(){
     try{
-        const apiURL = `https://newsapi.org/v2/top-headlines?country=us&pagesize=20&apikey=${apiKey}`
+        const apiURL = `https://newsapi.org/v2/top-headlines?country=us&pagesize=10&apikey=${apiKey}`;
         const response = await fetch(apiURL);
         const data = await response.json();
         return data.articles;
@@ -104,16 +106,24 @@ async function fetchNewsQuerry(querry){
 
 function displayBlogs(articles){
     blogContainer.innerHTML = "";
-    articles.forEach((article) => {
+        articles && articles.forEach((article) => {
         const blogCard=  document.createElement("div");
         blogCard.classList.add("blog-card");
+        
         const img = document.createElement("img");
         img.src = article.urlToImage;
         img.alt = article.title;   
+        
         const title = document.createElement("h2");  
+        //const shortTitle = article.title.length>30?article.title.slice(0,30)+"........":article.title;
+        //title.textContent = shortTitle;
         title.textContent = article.title;
+
         const description = document.createElement("p");
-        description.textContent =article.description;
+        //const shortDes = article.description.length>120?article.description.slice(0,120)+"........":article.description;
+        //description.textContent =shortDes;
+        description.textContent = article.description;
+
         blogCard.appendChild(img);
         blogCard.appendChild(title);
         blogCard.appendChild(description);
