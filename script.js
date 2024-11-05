@@ -91,7 +91,7 @@ searchButton.addEventListener("click", async ()=>{
 
 async function fetchNewsQuerry(querry){
     try{
-        const apiURL = `https://newsapi.org/v2/everything?q=${querry}&pagesize=20&apikey=${apiKey}`
+        const apiURL = `https://newsapi.org/v2/everything?q=${querry}&apikey=${apiKey}`
         const response = await fetch(apiURL);
         const data = await response.json();
         return data.articles;

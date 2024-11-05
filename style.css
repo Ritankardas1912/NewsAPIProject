@@ -60,7 +60,11 @@ nav{
     background-color: #000000;
     color: #ffffff;
     cursor: pointer;
+    font-size: large;
+    font-style: italic;
 }
+
+
 
 #search-input{
     max-width: 400px;
