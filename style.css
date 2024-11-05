@@ -53,9 +53,13 @@ nav{
     margin-top: 100px;
 }
 
-.categories span{
+.categories button{
     margin-right: 10px;
     align-items: center;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 #search-input{

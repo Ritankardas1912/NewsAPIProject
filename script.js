@@ -3,7 +3,11 @@ const apiKey='f88e0abbc60e4e9d968eb8358e31601f'
 const blogContainer = document.getElementById("blog-container");
 const searchField  = document.getElementById('search-input')
 const searchButton  = document.getElementById('search-button')
-
+const techButton = document.getElementById('tech-button')
+const entertainmentButton = document.getElementById('entertainment-button')
+const healthButton = document.getElementById('health-button')
+const sportsButton = document.getElementById('sports-button')
+const currentButton = document.getElementById('current-button')
 
 
 async function fetchRandomNews(){
@@ -17,6 +21,61 @@ async function fetchRandomNews(){
         return[]
     }
 }
+
+techButton.addEventListener("click", async ()=>{
+    const querry = "technology";
+        try{
+            const articles = await fetchNewsQuerry(querry)
+            displayBlogs(articles)
+        }catch(error){
+            console.log("Error fetching news by querry", error)
+        }
+    
+})
+
+entertainmentButton.addEventListener("click", async ()=>{
+    const querry = "entertainment";
+        try{
+            const articles = await fetchNewsQuerry(querry)
+            displayBlogs(articles)
+        }catch(error){
+            console.log("Error fetching news by querry", error)
+        }
+    
+})
+
+sportsButton.addEventListener("click", async ()=>{
+    const querry = "sports";
+        try{
+            const articles = await fetchNewsQuerry(querry)
+            displayBlogs(articles)
+        }catch(error){
+            console.log("Error fetching news by querry", error)
+        }
+    
+})
+
+currentButton.addEventListener("click", async ()=>{
+    const querry = "current affairs";
+        try{
+            const articles = await fetchNewsQuerry(querry)
+            displayBlogs(articles)
+        }catch(error){
+            console.log("Error fetching news by querry", error)
+        }
+    
+})
+
+healthButton.addEventListener("click", async ()=>{
+    const querry = "health";
+        try{
+            const articles = await fetchNewsQuerry(querry)
+            displayBlogs(articles)
+        }catch(error){
+            console.log("Error fetching news by querry", error)
+        }
+    
+})
 
 searchButton.addEventListener("click", async ()=>{
     const querry = searchField.value.trim()
@@ -50,15 +109,11 @@ function displayBlogs(articles){
         blogCard.classList.add("blog-card");
         const img = document.createElement("img");
         img.src = article.urlToImage;
-        img.alt = article.title;
-        const title = document.createElement("h2");
-        const truncatedTitle = article.title.lenght>30 ? article.title.slice(0,10) + "......." : article.title;
-        title.textContent = truncatedTitle;
+        img.alt = article.title;   
+        const title = document.createElement("h2");  
+        title.textContent = article.title;
         const description = document.createElement("p");
-        const truncatedDes = article.description.lenght>120 ? article.title.slice(0,120) + "......." : article.description;
-        title.textContent = truncatedDes;
-        description.textContent = article.description;
-
+        description.textContent =article.description;
         blogCard.appendChild(img);
         blogCard.appendChild(title);
         blogCard.appendChild(description);
